@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <Home />
+    <LandingPage />
   </div>
 </template>
 
 <script>
-import Home from "./Pages/Home";
+import LandingPage from "./Pages/LandingPage";
 
 export default {
   components: {
-    Home
+    LandingPage
   }
 };
 </script>
@@ -116,5 +116,8 @@ body {
 .form-control-dark:focus {
   border-color: transparent;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+}
+.mdi {
+  color: #7411f6;
 }
 </style>
