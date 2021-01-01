@@ -1,15 +1,15 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../Pages/Home.vue";
+import Main from "../Pages/Home.vue";
 import "@mdi/font/css/materialdesignicons.css";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
-    component: Home
+    path: "/main",
+    name: "Main",
+    component: Main
   }
 ];
 
