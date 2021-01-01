@@ -1,6 +1,9 @@
 <template>
   <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">All-Pro</a>
+    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="/">
+      <BaseLogo class="navLogo" />
+      <span class="logoLabel">All-Pro</span>
+    </a>
     <button
       class="navbar-toggler position-absolute d-md-none collapsed"
       type="button"
@@ -20,12 +23,32 @@
     />
     <ul class="navbar-nav px-3">
       <li class="nav-item text-nowrap">
-        <a class="nav-link" href="#">Sign out</a>
+        <a class="nav-link">Sign out</a>
       </li>
     </ul>
   </nav>
 </template>
 <script>
-export default {};
+import BaseLogo from "../_generics/baseLogo";
+export default {
+  name: "navBar",
+  components: {
+    BaseLogo
+  }
+};
 </script>
-<style scoped></style>
+<style scoped>
+.navLogo {
+  width: 38px;
+  height: 30px;
+  margin-top: -2px !important;
+}
+
+.navbar-brand {
+  height: 55px !important;
+}
+.logoLabel {
+  margin: 14px;
+  font-size: 20px;
+}
+</style>
