@@ -1,14 +1,17 @@
 <template>
   <div class="home">
-    <div class="container">
-      home / Dashboard
-    </div>
+    <NavbarComponent />
+    <div class="container"></div>
   </div>
 </template>
 
 <script>
+import NavbarComponent from "../components/Header/Navbar.vue";
+
 export default {
   name: "Home",
-  components: {}
+  components: {
+    NavbarComponent
+  }
 };
 </script>
