@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <NavbarComponent /> -->
     <div class="col-md-4 m-auto">
       <main class="form-signin">
         <div class="login_wrapper">
@@ -51,12 +50,10 @@
 </template>
 <script>
 import BaseLogo from "../_generics/baseLogo";
-import NavbarComponent from "../Header/Navbar";
 export default {
   name: "Login",
   components: {
-    BaseLogo,
-    NavbarComponent
+    BaseLogo
   },
 
   data() {

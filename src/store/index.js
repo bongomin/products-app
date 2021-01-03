@@ -6,7 +6,15 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    login: true
+    login: true,
+    productSales: {
+      productName: "",
+      productCategory: "",
+      productType: "",
+      productQuantity: "",
+      ProductPrice: "",
+      TotalPrice: 0
+    }
   },
   mutations: {},
   actions: {},
