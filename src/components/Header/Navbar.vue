@@ -1,9 +1,11 @@
 <template>
   <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="/">
-      <BaseLogo class="navLogo" />
-      <span class="logoLabel">All-Pro</span>
-    </a>
+    <div>
+      <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="/">
+        <BaseLogo class="navLogo" />
+        <span class="logoLabel">All-Pro</span>
+      </a>
+    </div>
     <button
       class="navbar-toggler position-absolute d-md-none collapsed"
       type="button"
@@ -22,7 +24,7 @@
       aria-label="Search"
     />
     <ul class="navbar-nav px-3">
-      <li class="nav-item text-nowrap">
+      <li class="nav-item text-nowrap logout" v-on:click="logout">
         <a class="nav-link">Sign out</a>
       </li>
     </ul>
@@ -34,6 +36,12 @@ export default {
   name: "navBar",
   components: {
     BaseLogo
+  },
+
+  methods: {
+    logout() {
+      this.$router.push("/");
+    }
   }
 };
 </script>
@@ -48,7 +56,12 @@ export default {
   height: 55px !important;
 }
 .logoLabel {
-  margin: 14px;
+  margin: 5px;
   font-size: 20px;
+  position: relative;
+  top: -9px;
+}
+.logout:hover {
+  cursor: pointer;
 }
 </style>
