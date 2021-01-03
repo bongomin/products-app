@@ -1,21 +1,23 @@
 <template>
   <ul class="nav">
     <li class="nav-item">
-      <router-link class="nav-link" to="/sales">Sale</router-link>
+      <router-link class="nav-link active" to="/hgg"
+        >Available Products</router-link
+      >
     </li>
     <li class="nav-item">
-      <router-link class="nav-link" to="/tre">Purchase</router-link>
+      <router-link class="nav-link active" to="/vb">Sold Productss</router-link>
     </li>
     <li class="nav-item">
-      <router-link class="nav-link" to="/hui">Sumary</router-link>
+      <router-link class="nav-link active" to="/gh"
+        >Stocked Products</router-link
+      >
     </li>
-    <!-- <li class="nav-item float-right ">
-      <label>{{ currentRouteName }}</label>
-    </li> -->
   </ul>
 </template>
 <script>
 export default {
+  name: "Products_nav",
   computed: {
     currentRouteName() {
       return this.$route.name;

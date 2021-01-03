@@ -1,12 +1,21 @@
 <template>
   <div>
-    Products
+    <Products_NavComponent />
+    <Products_TableComponent />
   </div>
 </template>
 <script>
 import Axios from "axios";
+import Products_NavComponent from "../components/Products/Products_Nav.vue";
+import Products_TableComponent from "../components/Products/Products_Table.vue";
+
 export default {
   name: "Products",
+
+  components: {
+    Products_NavComponent,
+    Products_TableComponent
+  },
 
   data() {
     return {

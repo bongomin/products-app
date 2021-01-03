@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Login />
     <LandingPage />
   </div>
 </template>
@@ -119,5 +120,17 @@ body {
 }
 .mdi {
   color: #7411f6;
+}
+a:hover {
+  color: #0056b3;
+  text-decoration: none !important;
+}
+.router-link-active {
+  background-color: #7312f3 !important;
+}
+.router-link-active .nav-link,
+.router-link-active .nav-link .mdi {
+  color: #fff !important;
+  text-decoration: none;
 }
 </style>

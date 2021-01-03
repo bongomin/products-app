@@ -9,7 +9,7 @@
           <li class="nav-item">
             <div class="nav-link active">
               <i class="mdi mdi-home"></i>
-              Dashboard <span class="sr-only">(current)</span>
+              Overview<span class="sr-only">(current)</span>
             </div>
           </li>
         </router-link>
@@ -99,8 +99,11 @@
 export default {};
 </script>
 <style scoped>
+.mdi-home {
+  font-size: 20px;
+}
 .nav-item:hover {
-  background: #7411f6;
+  background: #8e8a94;
   color: aliceblue;
 }
 
