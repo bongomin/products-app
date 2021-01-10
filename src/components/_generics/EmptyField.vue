@@ -1,13 +1,18 @@
 <template>
-  <div>
-    <i class="mdi mdi-beaker-empty-outline nIcon"></i>
+  <div class="basket">
+    <h4 center>Sales Basket Empty</h4>
+    <i class="mdi mdi-checkbox-multiple-blank-outline"></i>
   </div>
 </template>
 <script>
 export default {};
 </script>
 <style scoped>
-.nIcon {
-  font-size: 30px;
+.mdi {
+  font-size: 70px;
+  margin-left: 60px;
+}
+.basket {
+  align-content: center;
 }
 </style>

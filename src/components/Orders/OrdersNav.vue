@@ -1,13 +1,13 @@
 <template>
   <ul class="nav">
     <li class="nav-item">
-      <router-link class="nav-link" to="/sales">Sale</router-link>
+      <router-link class="nav-link" to="/orders">Sale</router-link>
     </li>
     <li class="nav-item">
-      <router-link class="nav-link" to="/tre">Purchase</router-link>
+      <router-link class="nav-link" to="/stock">Stock</router-link>
     </li>
     <li class="nav-item">
-      <router-link class="nav-link" to="/hui">Sumary</router-link>
+      <router-link class="nav-link" to="/summary">Summary</router-link>
     </li>
     <!-- <li class="nav-item float-right ">
       <label>{{ currentRouteName }}</label>

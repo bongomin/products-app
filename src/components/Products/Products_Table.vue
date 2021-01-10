@@ -37,7 +37,6 @@
               placeholder="Filter Developers"
             />
           </div>
-
           <table class="table table-hover productTable" id="product-table">
             <thead>
               <tr>
@@ -54,7 +53,6 @@
               </tr>
             </thead>
             <tbody>
-              <EmptyFieldComponent />
               <tr v-for="(product, id) in products" :key="`product_key${id}`">
                 <td>
                   <i class="mdi mdi-menu-right"></i>
@@ -70,9 +68,16 @@
                 <td>
                   <i
                     class="mdi mdi-pencil m-2 eIcon"
+                    data-toggle="modal"
+                    data-target="#exampleModal"
                     v-on:click="editProduct(id)"
                   ></i>
-                  <i class="mdi mdi-delete m-2" v-on:click="deleteItem(id)"></i>
+                  <i
+                    class="mdi mdi-delete m-2"
+                    data-toggle="modal"
+                    data-target="#exampleModalLong"
+                    v-on:click="deleteItem(id)"
+                  ></i>
                 </td>
               </tr>
             </tbody>
@@ -80,20 +85,118 @@
         </div>
       </div>
     </div>
+    <div>
+      <!-- Confirmation Modal -->
+      <div>
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModalLong"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalLongTitle"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">
+                  Confirmation
+                </h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Do you Really Want to delete this record ?
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-danger"
+                  data-dismiss="modal"
+                >
+                  No
+                </button>
+                <button type="button" class="btn btn-sm btn-success">
+                  Yes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Edit Products Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label"
+                    >Recipient:</label
+                  >
+                  <input type="text" class="form-control" id="recipient-name" />
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label"
+                    >Message:</label
+                  >
+                  <textarea class="form-control" id="message-text"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">
+                Send message
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
 import { mapState } from "vuex";
-import EmptyFieldComponent from "../_generics/EmptyField.vue";
 
 export default {
-  components: {
-    EmptyFieldComponent
-  },
+  components: {},
   data() {
     return {
       searchProducts: false,
-      confirmationModal: false
+      showConfirmation: false
     };
   },
 
@@ -115,6 +218,10 @@ export default {
 };
 </script>
 <style scoped>
+.modal-header {
+  background: #7411f6;
+  color: #fff;
+}
 .searchP {
   background: #7411f6;
   height: 50px;
