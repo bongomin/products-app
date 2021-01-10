@@ -4,9 +4,9 @@
     <div class="row">
       <div class="col-md-6 col-sm-12 m-2">
         <div class="card">
-          <h5 class="card-title sales-heading">
-            <i class="mdi mdi-coffee-to-go"></i>
-            Sale Product
+          <h5 class="card-title stock-title">
+            <i class="mdi mdi-google-circles-group"></i>
+            Stock Products
           </h5>
           <div class="card-body">
             <div class="saleProductsForm">
@@ -17,7 +17,6 @@
                       type="text"
                       class="form-control"
                       id="inputAddress2"
-                      autofocus
                       placeholder="Name"
                       v-model.trim="productName"
                     />
@@ -61,66 +60,33 @@
                 </div>
                 <button
                   type="button"
-                  class="btn btn-md btn-primary mt-3 m-2"
+                  class="btn btn-lg btn-primary mt-3 m-2"
                   v-on:click="soldProducts"
                 >
-                  Sale
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-md btn-warning cart mt-3 m-2"
-                  @click.enter="addToCard"
-                >
-                  Cart
-                  <span class="badge badge-light">{{
-                    productsCard.length
-                  }}</span>
+                  Stock
                 </button>
               </form>
             </div>
           </div>
         </div>
-        <salesComputations />
       </div>
-      <div class="col-md-5 col-sm-5 m-2 right-col">
-        <div v-if="productsCard.length">
-          <ul>
-            <li
-              class="list"
-              v-for="(product, id) in this.productsCard"
-              :key="id"
-            >
-              <span>
-                <i class="mdi mdi-chevron-double-right listIcon"></i>
-                {{ product.productName }}
-                <i
-                  class="mdi mdi-window-close CloseIcon"
-                  v-on:click="deleteItem(id)"
-                ></i>
-              </span>
-            </li>
-          </ul>
-        </div>
-        <div class="empty" v-else>
-          <EmptyData />
-        </div>
-        <EmptyDat />
+      <div class="col-md-5 col-sm-5 m-2">
+        <StockTable />
       </div>
     </div>
   </div>
 </template>
 <script>
 import { mapState } from "vuex";
-import OrdersNavComponent from "../components/Orders/OrdersNav.vue";
+import OrdersNavComponent from "../Orders/OrdersNav";
 import "@mdi/font/css/materialdesignicons.css";
-import salesComputations from "../components/Orders/salesComputations.vue";
-import EmptyData from "../components/_generics/EmptyField.vue";
+import StockTable from "./stockTable.vue";
+
 export default {
   name: "Orders",
   components: {
     OrdersNavComponent,
-    salesComputations,
-    EmptyData
+    StockTable
   },
 
   data() {
@@ -174,10 +140,7 @@ export default {
 };
 </script>
 <style scoped>
-.cart {
-  width: 128px;
-}
-.sales-heading {
+.stock-title {
   margin: 3px;
   padding: 8px;
 }
@@ -192,10 +155,6 @@ export default {
 }
 .error {
   color: red;
-}
-.empty {
-  margin-left: 100px;
-  margin-top: 123px;
 }
 ul {
   list-style-type: none;
