@@ -1,53 +1,57 @@
 <template>
-  <div class="col-md-4 m-auto">
-    <main class="form-signin">
-      <div class="login_wrapper">
-        <BaseLogo width="80" height="60" />
-        <form>
-          <label for="inputEmail" class="visually-hidden">Email address</label>
-          <input
-            type="email"
-            v-model="userEmail"
-            class="form-control"
-            placeholder="Email address"
-            required
-            autofocus
-          />
-          <label for="inputPassword" class="visually-hidden">Password</label>
-          <input
-            type="password"
-            id="inputPassword"
-            class="form-control"
-            placeholder="Password"
-            v-model="userPassword"
-            required
-          />
-          <div class="checkbox mb-3">
-            <label>
-              <input class="remember" type="checkbox" value="remember-me" />
-              Remember me
-            </label>
-          </div>
-          <button
-            class=" btn btn-md btn-dark"
-            v-on:click.prevent="LoginHandler"
-          >
-            Sign in
-          </button>
-        </form>
-      </div>
-      <br />
-      <div class="errMessage" v-if="errMessage">{{ errMessage }}</div>
-      <p class="mt-5 mb-2 text-muted date_shower">
-        &copy; Daniel | all-pro | {{ new Date().getFullYear() }}
-      </p>
-    </main>
+  <div>
+    <div class="col-md-4 m-auto">
+      <main class="form-signin">
+        <div class="login_wrapper">
+          <BaseLogo width="80" height="60" />
+          <form>
+            <label for="inputEmail" class="visually-hidden"
+              >Email address</label
+            >
+            <input
+              type="email"
+              v-model="userEmail"
+              class="form-control"
+              placeholder="Email address"
+              required
+              autofocus
+            />
+            <label for="inputPassword" class="visually-hidden">Password</label>
+            <input
+              type="password"
+              id="inputPassword"
+              class="form-control"
+              placeholder="Password"
+              v-model="userPassword"
+              required
+            />
+            <div class="checkbox mb-3">
+              <label>
+                <input class="remember" type="checkbox" value="remember-me" />
+                Remember me
+              </label>
+            </div>
+            <button
+              class=" btn btn-md btn-dark"
+              v-on:click.prevent="LoginHandler"
+            >
+              Sign in
+            </button>
+          </form>
+        </div>
+        <br />
+        <div class="errMessage" v-if="errMessage">{{ errMessage }}</div>
+        <p class="mt-5 mb-2 text-muted date_shower">
+          &copy; Daniel | all-pro | {{ new Date().getFullYear() }}
+        </p>
+      </main>
+    </div>
   </div>
 </template>
 <script>
 import BaseLogo from "../_generics/baseLogo";
 export default {
-  name: "login",
+  name: "Login",
   components: {
     BaseLogo
   },
@@ -89,7 +93,7 @@ export default {
   margin-bottom: 45px !important;
 }
 .date_shower {
-  margin-left: 106px;
+  margin-left: 123px;
 }
 .remember {
   margin-top: 10px;

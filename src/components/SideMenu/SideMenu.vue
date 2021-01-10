@@ -5,42 +5,54 @@
   >
     <div class="sidebar-sticky pt-3">
       <ul class="nav flex-column">
-        <li class="nav-item">
-          <a class="nav-link active">
-            <i class="mdi mdi-home"></i>
-            Dashboard <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link">
-            <i class="mdi mdi-folder"></i>
-            Orders
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link">
-            <i class="mdi mdi-shopping"></i>
-            Products
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link">
-            <i class="mdi mdi-account-multiple"></i>
-            Customers
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link">
-            <i class="mdi mdi-account-multiple"></i>
-            Reports
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link">
-            <i class="mdi mdi-account-multiple"></i>
-            Integrations
-          </a>
-        </li>
+        <router-link to="/main">
+          <li class="nav-item">
+            <div class="nav-link active">
+              <i class="mdi mdi-home"></i>
+              Overview<span class="sr-only">(current)</span>
+            </div>
+          </li>
+        </router-link>
+        <router-link to="/orders">
+          <li class="nav-item">
+            <div class="nav-link">
+              <i class="mdi mdi-folder"></i>
+              Orders
+            </div>
+          </li>
+        </router-link>
+        <router-link to="/products">
+          <li class="nav-item">
+            <div class="nav-link">
+              <i class="mdi mdi-shopping"></i>
+              Products
+            </div>
+          </li>
+        </router-link>
+        <router-link to="/customers">
+          <li class="nav-item">
+            <div class="nav-link">
+              <i class="mdi mdi-account-multiple"></i>
+              Customers
+            </div>
+          </li>
+        </router-link>
+        <router-link to="/reports">
+          <li class="nav-item">
+            <div class="nav-link">
+              <i class="mdi mdi-account-multiple"></i>
+              Reports
+            </div>
+          </li>
+        </router-link>
+        <router-link to="/integrations">
+          <li class="nav-item">
+            <div class="nav-link">
+              <i class="mdi mdi-account-multiple"></i>
+              Integrations
+            </div>
+          </li>
+        </router-link>
       </ul>
 
       <h6
@@ -70,7 +82,7 @@
         <li class="nav-item">
           <a class="nav-link">
             <i class="mdi mdi-folder-multiple"></i>
-            Social engagement
+            engagement
           </a>
         </li>
         <li class="nav-item">
@@ -86,4 +98,16 @@
 <script>
 export default {};
 </script>
-<style scoped></style>
+<style scoped>
+.mdi-home {
+  font-size: 20px;
+}
+.nav-item:hover {
+  background: #8e8a94;
+  color: aliceblue;
+}
+
+.nav-link:hover {
+  color: white;
+}
+</style>
